@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+body {
+    text-align: center;
+}
+
+
+.card-text {
+    text-align: left;
+}
+/* header.product-index-header {
+    /* margin: 0 auto; */
+    /* text-align: center; */

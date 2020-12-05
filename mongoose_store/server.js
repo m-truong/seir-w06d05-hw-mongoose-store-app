@@ -40,7 +40,7 @@ mongoose.connection.once('open', () => {
 // CONTROLLER
 // ===========
 const productController = require('./controllers/productController.js')
-app.use('/product', productController)
+app.use('/products', productController)
 
 // ============
 // LISTENER
