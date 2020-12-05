@@ -7,19 +7,19 @@ const productSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true
+        // required: true
     },
     img: {
         type: String,
-        required: true
+        // required: true
     },
     price: {
         type: Number,
-        required: true
+        min: [0, "Can't be free"]
     },
     qty: {
         type: Number,
-        required: true
+        min: [0, "Too few items"]
     }
 });
 
