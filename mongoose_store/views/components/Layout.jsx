@@ -1,3 +1,10 @@
+import Button from "react-bootstrap/Button";
+// import Container from "react-bootstrap/Container";
+// import Row from "react-bootstrap/Row";
+// import Card from "react-bootstrap/Card";
+// import Form from "react-bootstrap/Form";
+// import Col from "react-bootstrap/Col";
+
 const React = require("react");
 
 class Layout extends React.Component {
@@ -10,7 +17,7 @@ class Layout extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <title>Mongoose Product Store</title>
+          <title>Mike's Mongoose Product Store</title>
           <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -21,7 +28,13 @@ class Layout extends React.Component {
         </head>
         <body>
           <nav>
-            <a href="/products">Home</a>
+            <Button variant="light" href="/products">Home</Button>
+            <h1 id="" className="">
+              Mike's Mongoose Product Store
+            </h1>
+            <nav>
+              <Button variant="success" href="/products/new">Create a Product Page</Button>
+            </nav>
           </nav>
 
           {this.props.children}

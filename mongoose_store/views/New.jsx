@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Card from "react-bootstrap/Card";
+// import Row from "react-bootstrap/Row";
+// import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 
@@ -12,50 +12,55 @@ class New extends React.Component {
   render() {
     return (
       <Layout>
-        <Container>
-          <Form action="/products" method="POST" role="form">
-            <Form.Row>
-
+        <main>
+          <Container>
+            <Form action="/products" method="POST" role="form">
               <Form.Group as={Col} controlId="">
                 <Form.Label>Product Name</Form.Label>
-                <Form.Control type="" placeholder="Enter product name" />
+                <Form.Control
+                  name="name"
+                  type="text"
+                  placeholder="Enter product name"
+                />
               </Form.Group>
-
-
-            </Form.Row>
-
-            <Form.Group controlId="">
-              <Form.Label>Product Description</Form.Label>
-              <Form.Control placeholder="Enter product description" />
-            </Form.Group>
-
-
-            <Form.Row>
               <Form.Group as={Col} controlId="">
-                <Form.Label>Product Image Link</Form.Label>
-                <Form.Control />
+                <Form.Label>Product Description</Form.Label>
+                <Form.Control
+                  name="description"
+                  type="text"
+                  placeholder="Enter product description"
+                />
               </Form.Group>
-
               <Form.Group as={Col} controlId="">
-                <Form.Label>Price</Form.Label>
-                <Form.Control as="select" defaultValue="Choose...">
-                  <option>Choose...</option>
-                  <option>...</option>
-                </Form.Control>
+                <Form.Label>Product Image</Form.Label>
+                <Form.Control
+                  name="img"
+                  type="text"
+                  placeholder="Enter product image"
+                />
               </Form.Group>
-
               <Form.Group as={Col} controlId="">
-                <Form.Label>Quantity</Form.Label>
-                <Form.Control />
+                <Form.Label>Product Price</Form.Label>
+                <Form.Control
+                  name="price"
+                  type="text"
+                  placeholder="Enter product price"
+                />
               </Form.Group>
-            </Form.Row>
-
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-            
-          </Form>
-        </Container>
+              <Form.Group as={Col} controlId="">
+                <Form.Label>Product Quantity</Form.Label>
+                <Form.Control
+                  name="qty"
+                  type="text"
+                  placeholder="Enter product quantity"
+                />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form>
+          </Container>
+        </main>
       </Layout>
     );
   }

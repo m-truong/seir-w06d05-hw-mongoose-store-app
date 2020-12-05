@@ -6,15 +6,8 @@ const router = express.Router()
 // ============
 const Product = require('../models/product.js')
 
-// ============
-// TESTING
-// ============
-// router.get('/', (req, res) => {
-//     res.send('Hello World');
-// })
-
 // ======================
-// RESTful ROUTES INDUCES
+// RESTful ROUTES "INDUCES"
 // ======================
 /**
  * GET - the user asks for information from a server, 
@@ -24,17 +17,13 @@ const Product = require('../models/product.js')
  */
 
 // Index'/<nameOfResource>' GET ex. app.get('/products'...) 
-// Index should have ALL THE BUTTONS
 router.get('/', (req, res) => {
     Product.find({}, (err, allProducts) => { 
         if (err) {
             res.send(err)
         } else {
-            // console.log("here's the array of document objects!")
-            // console.log(allProducts) 
             res.render('Index', {
                 products: allProducts
-                // can pass as many props as want
             })
         }
     });
@@ -51,16 +40,11 @@ router.get('/new', (req, res) => {
 
 // Create '/<nameOfResource>/' POST ex. app.post('/products/')
 router.post('/', (req, res) => {
-    // if (req.body.readyToEat === 'on') { 
-    //     req.body.readyToEat = true;
-    // } else { 
-    //     req.body.readyToEat = false;
-    // }
     Product.create(req.body, (err, createdProduct) => {
         if (err) {
             res.send(err);
         } else {
-            res.redirect('/');
+            res.redirect('/products');
         }
     });
 });
@@ -74,7 +58,7 @@ router.get('/:id', (req, res) => {
             res.send(err) 
         } else {
             res.render('Show', {
-                Product: foundProduct
+                product: foundProduct
             })
         }
     });
