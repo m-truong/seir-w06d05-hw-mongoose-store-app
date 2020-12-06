@@ -1,8 +1,12 @@
 import Button from "react-bootstrap/Button";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav"
+import NavDropdown from "react-bootstrap/NavDropdown"
+import FormControl from "react-bootstrap/FormControl"
 // import Container from "react-bootstrap/Container";
 // import Row from "react-bootstrap/Row";
 // import Card from "react-bootstrap/Card";
-// import Form from "react-bootstrap/Form";
+import Form from "react-bootstrap/Form";
 // import Col from "react-bootstrap/Col";
 
 const React = require("react");
@@ -17,29 +21,64 @@ class Layout extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <title>Mike's Mongoose Product Store</title>
+          <title>Topspin 🎾 </title>
+          {/* GoogleFonts */}
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Mukta&display=swap"
+            rel="stylesheet"
+          ></link>
+          {/* Bootstrap */}
           <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossOrigin="anonymous"
           ></link>
-          <link rel="stylesheet" href="/css/style.css"/>
+          {/* CSS Stylesheet */}
+          <link rel="stylesheet" href="/css/style.css" />
         </head>
         <body>
-          <nav>
-            <Button variant="light" href="/products">Home</Button>
+          <Navbar bg="light" expand="lg">
+            <Navbar.Brand href="/products">Topspin Home</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="mr-auto">
+                <Nav.Link href="/products/new">Request a Tennis Racquet</Nav.Link>
+                <Nav.Link href="#link">Link</Nav.Link>
+                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">
+                    Another action
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.3">
+                    Something
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action/3.4">
+                    Separated link
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+              <Form inline>
+                <FormControl
+                  type="text"
+                  placeholder="Search"
+                  className="mr-sm-2"
+                />
+                <Button variant="outline-success">Search</Button>
+              </Form>
+            </Navbar.Collapse>
+          </Navbar>
+
+          <header>
             <h1 id="" className="">
-              Mike's Mongoose Product Store
+              Topsin 🎾
             </h1>
-            <nav>
-              <Button variant="success" href="/products/new">Create a Product Page</Button>
-            </nav>
-          </nav>
-
+          </header>
           {this.props.children}
-
-          <footer>copyright Mike's Product Store</footer>
+          <footer>copyright Topspin 🎾</footer>
+          {/* Scripts */}
           <script
             src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

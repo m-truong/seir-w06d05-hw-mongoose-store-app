@@ -19,9 +19,10 @@ class Show extends React.Component {
                 <Card.Img variant="top" src={product.img} />
                 <Card.Body>
                   <Card.Title>{product.name}</Card.Title>
-                  <Card.Text className="card-text">
+                  <hr/>
+                  {/* <Card.Text className="card-text">
                     {product.description}
-                  </Card.Text>
+                  </Card.Text> */}
                   {product.price > 0 ? (
                     <Card.Text>Price ${product.price}</Card.Text>
                   ) : (

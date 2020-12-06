@@ -15,18 +15,18 @@ class Index extends React.Component {
 
         <main>
           <Container>
-            {this.props.products.map((product, i) => {
-              return (
-                <Row className="justify-content-md-center">
-                  <Card style={{ width: "18rem" }}>
+            <Row className="justify-content-around">
+              {this.props.products.map((product, i) => {
+                return (
+                  <Card className="card-border" style={{ width: "18rem" }}>
                     <a href={`/products/${product._id}`}>
                       <Card.Img variant="top" src={product.img} />{" "}
                     </a>
                     <Card.Body>
                       <Card.Title>{product.name}</Card.Title>
-                      <Card.Text className="card-text">
+                      {/* <Card.Text className="card-text">
                         {product.description}
-                      </Card.Text>
+                      </Card.Text> */}
                       <Card.Text>Price: ${product.price}</Card.Text>
                       <Card.Text>{product.qty} remaining</Card.Text>
                       <Button
@@ -37,9 +37,9 @@ class Index extends React.Component {
                       </Button>
                     </Card.Body>
                   </Card>
-                </Row>
-              );
-            })}
+                );
+              })}
+            </Row>
           </Container>
         </main>
       </Layout>

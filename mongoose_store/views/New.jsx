@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-// import Row from "react-bootstrap/Row";
+import Row from "react-bootstrap/Row";
 // import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -14,6 +14,7 @@ class New extends React.Component {
       <Layout>
         <main>
           <Container>
+          <Row className="justify-content-center">
             <Form action="/products" method="POST" role="form">
               <Form.Group as={Col} controlId="">
                 <Form.Label>Product Name</Form.Label>
@@ -59,6 +60,7 @@ class New extends React.Component {
                 Submit
               </Button>
             </Form>
+            </Row>
           </Container>
         </main>
       </Layout>

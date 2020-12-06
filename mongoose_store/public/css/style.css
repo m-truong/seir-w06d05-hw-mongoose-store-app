@@ -2,14 +2,19 @@
     margin: 0;
     padding: 0; 
     box-sizing: border-box;
-    border: 2px solid gainsboro;
+    /* border: 2px solid black; */
+    font-family: 'Mukta', sans-serif;
 }
 body {
     text-align: center;
-    background-color: lightskyblue;
+    background-color:whitesmoke;
 }
 
-.card-text {
-    text-align: left;
+nav {
+
+}
+
+.card-border {
+    border: 1px solid gainsboro;
 }
 
